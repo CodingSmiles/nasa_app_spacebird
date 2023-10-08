@@ -38,7 +38,6 @@ class _MainState extends State<Main> {
       ),
       home: const Splash(),
       theme: ThemeData(
-
         appBarTheme: AppBarTheme(
           centerTitle: true,
           backgroundColor: const Color.fromRGBO(27, 41, 68, 1),

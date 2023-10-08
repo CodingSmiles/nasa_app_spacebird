@@ -65,155 +65,158 @@ class _HomeState extends State<Home> {
             itemCount: widget.climate.length,
             itemBuilder: (context, index) {
               return SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'External Data Points',
-                      style: TextStyle(
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.bold,
-                        fontSize: hpw2 * 2,
-                        color: Colors.white,
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'External Data Points',
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.bold,
+                          fontSize: hpw2 * 2,
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        DataPoint(
-                          data: widget.climate[index].temperature ?? 1,
-                          unit: '°C',
-                          title: 'Outside Temperature',
-                        ),
-                        DataPoint(
-                          data: widget.climate[index].pressure ?? 1,
-                          unit: 'hPa',
-                          title: 'Outside Pressure',
-                        ),
-                        DataPoint(
-                          data: widget.climate[index].humidity ?? 1,
-                          unit: '%',
-                          title: 'Outside Humidity',
-                        ),
-                        DataPoint(
-                          data: widget.climate[index].co ?? 1,
-                          unit: 'µg/m3',
-                          title: 'Carbon Monoxide',
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        DataPoint(
-                          data: widget.climate[index].no2 ?? 1,
-                          unit: 'µg/m3',
-                          title: 'Nitrogen Dioxide',
-                        ),
-                        DataPoint(
-                          data: widget.climate[index].o3 ?? 1,
-                          unit: 'µg/m3',
-                          title: 'Ozone',
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: hpw2 * 3,
-                    ),
-                    Text(
-                      'Inside Base Datapoints',
-                      style: TextStyle(
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.bold,
-                        fontSize: hpw2 * 2,
-                        color: Colors.white,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          DataPoint(
+                            data: widget.climate[index].temperature ?? 1,
+                            unit: '°C',
+                            title: 'Outside Temperature',
+                          ),
+                          DataPoint(
+                            data: widget.climate[index].pressure ?? 1,
+                            unit: 'hPa',
+                            title: 'Outside Pressure',
+                          ),
+                          DataPoint(
+                            data: widget.climate[index].humidity ?? 1,
+                            unit: '%',
+                            title: 'Outside Humidity',
+                          ),
+                          DataPoint(
+                            data: widget.climate[index].co ?? 1,
+                            unit: 'µg/m3',
+                            title: 'Carbon Monoxide',
+                          ),
+                        ],
                       ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        DataPoint(
-                          data: widget.baseClimate[index].temperature ?? 1,
-                          unit: '°C',
-                          title: 'Inside Temperature',
-                        ),
-                        DataPoint(
-                          data: widget.baseClimate[index].pressure ?? 1,
-                          unit: 'hPa',
-                          title: 'Inside Pressure',
-                        ),
-                        DataPoint(
-                          data: widget.baseClimate[index].humidity ?? 1,
-                          unit: '%',
-                          title: 'Inside Humidity',
-                        ),
-                        DataPoint(
-                          data: widget.baseClimate[index].co2 ?? 1,
-                          unit: ' ppm',
-                          title: 'Carbon Dioxide Concentration',
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: hpw2 * 3,
-                    ),
-                    Text(
-                      'Resource Management',
-                      style: TextStyle(
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.bold,
-                        fontSize: hpw2 * 2,
-                        color: Colors.white,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          DataPoint(
+                            data: widget.climate[index].no2 ?? 1,
+                            unit: 'µg/m3',
+                            title: 'Nitrogen Dioxide',
+                          ),
+                          DataPoint(
+                            data: widget.climate[index].o3 ?? 1,
+                            unit: 'µg/m3',
+                            title: 'Ozone',
+                          ),
+                        ],
                       ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        DataPoint(
-                          data: widget.resources[index].oxygen ?? 1,
-                          unit: ' litres',
-                          title: 'Stored Oxygen Quantity',
-                        ),
-                        DataPoint(
-                          data: widget.resources[index].food ?? 1,
-                          unit: ' kg',
-                          title: 'Estimated Food Left',
-                        ),
-                        DataPoint(
-                          data: widget.resources[index].water ?? 1,
-                          unit: ' litres',
-                          title: 'Estimated Water Left',
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: hpw2 * 3,
-                    ),
-                    Text(
-                      'Waste Management',
-                      style: TextStyle(
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.bold,
-                        fontSize: hpw2 * 2,
-                        color: Colors.white,
+                      SizedBox(
+                        height: hpw2 * 3,
                       ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        DataPoint(
-                          data: widget.waste[index].biodegradable ?? 1,
-                          unit: ' kg',
-                          title: 'Gross Biodegradable Waste',
+                      Text(
+                        'Inside Base Datapoints',
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.bold,
+                          fontSize: hpw2 * 2,
+                          color: Colors.white,
                         ),
-                        DataPoint(
-                          data: widget.waste[index].plastics ?? 1,
-                          unit: ' kg',
-                          title: 'Gross Plastic Waste',
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          DataPoint(
+                            data: widget.baseClimate[index].temperature ?? 1,
+                            unit: '°C',
+                            title: 'Inside Temperature',
+                          ),
+                          DataPoint(
+                            data: widget.baseClimate[index].pressure ?? 1,
+                            unit: 'hPa',
+                            title: 'Inside Pressure',
+                          ),
+                          DataPoint(
+                            data: widget.baseClimate[index].humidity ?? 1,
+                            unit: '%',
+                            title: 'Inside Humidity',
+                          ),
+                          DataPoint(
+                            data: widget.baseClimate[index].co2 ?? 1,
+                            unit: ' ppm',
+                            title: 'Carbon Dioxide Concentration',
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: hpw2 * 3,
+                      ),
+                      Text(
+                        'Resource Management',
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.bold,
+                          fontSize: hpw2 * 2,
+                          color: Colors.white,
                         ),
-                      ],
-                    ),
-                  ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          DataPoint(
+                            data: widget.resources[index].oxygen ?? 1,
+                            unit: ' litres',
+                            title: 'Stored Oxygen Quantity',
+                          ),
+                          DataPoint(
+                            data: widget.resources[index].food ?? 1,
+                            unit: ' kg',
+                            title: 'Estimated Food Left',
+                          ),
+                          DataPoint(
+                            data: widget.resources[index].water ?? 1,
+                            unit: ' litres',
+                            title: 'Estimated Water Left',
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: hpw2 * 3,
+                      ),
+                      Text(
+                        'Waste Management',
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.bold,
+                          fontSize: hpw2 * 2,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          DataPoint(
+                            data: widget.waste[index].biodegradable ?? 1,
+                            unit: ' kg',
+                            title: 'Gross Biodegradable Waste',
+                          ),
+                          DataPoint(
+                            data: widget.waste[index].plastics ?? 1,
+                            unit: ' kg',
+                            title: 'Gross Plastic Waste',
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               );
             },
