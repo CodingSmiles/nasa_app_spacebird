@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "240790069101",
+    "project_id": "nasa-app-spacebird",
+    "storage_bucket": "nasa-app-spacebird.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:240790069101:android:469ebf9da5e39522230464",
+        "android_client_info": {
+          "package_name": "com.spacebird.app.nasa_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrpaukj22EATlQPRE9JTeHHXaepjZ35mU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
