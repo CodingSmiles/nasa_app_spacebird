@@ -4,7 +4,6 @@ import 'package:nasa_app/models/base_climate.dart';
 import 'package:nasa_app/models/climate.dart';
 import 'package:nasa_app/models/waste.dart';
 import 'package:nasa_app/widgets/data_point.dart';
-
 import 'models/resources.dart';
 
 class Home extends StatefulWidget {
@@ -89,7 +88,7 @@ class _HomeState extends State<Home> {
                           ),
                           DataPoint(
                             data: widget.climate[index].pressure ?? 1,
-                            unit: 'hPa',
+                            unit: ' hPa',
                             title: 'Outside Pressure',
                           ),
                           DataPoint(
@@ -99,8 +98,13 @@ class _HomeState extends State<Home> {
                           ),
                           DataPoint(
                             data: widget.climate[index].co ?? 1,
-                            unit: 'µg/m3',
+                            unit: ' µg/m3',
                             title: 'Carbon Monoxide',
+                          ),
+                          DataPoint(
+                            data: widget.climate[index].co ?? 1,
+                            unit: ' ppm',
+                            title: 'Carbon Dioxide',
                           ),
                         ],
                       ),
@@ -109,12 +113,12 @@ class _HomeState extends State<Home> {
                         children: [
                           DataPoint(
                             data: widget.climate[index].no2 ?? 1,
-                            unit: 'µg/m3',
+                            unit:  'µg/m3',
                             title: 'Nitrogen Dioxide',
                           ),
                           DataPoint(
                             data: widget.climate[index].o3 ?? 1,
-                            unit: 'µg/m3',
+                            unit: ' µg/m3',
                             title: 'Ozone',
                           ),
                         ],
@@ -141,7 +145,7 @@ class _HomeState extends State<Home> {
                           ),
                           DataPoint(
                             data: widget.baseClimate[index].pressure ?? 1,
-                            unit: 'hPa',
+                            unit: ' hPa',
                             title: 'Inside Pressure',
                           ),
                           DataPoint(
