@@ -102,7 +102,7 @@ class _HomeState extends State<Home> {
                             title: 'Carbon Monoxide',
                           ),
                           DataPoint(
-                            data: widget.climate[index].co ?? 1,
+                            data: widget.climate[index].co2 ?? 1,
                             unit: ' ppm',
                             title: 'Carbon Dioxide',
                           ),
